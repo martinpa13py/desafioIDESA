@@ -2,7 +2,7 @@
 require_once 'Database.php';
 
 class DesafioDos {
-
+    //MODIFICADO para devolver los lotes con id: 4 al 8
     public static function retriveLotes(string $loteID):void { //bug corregido, se cambio tipo de parametro a string
 
         Database::setDB(); 
