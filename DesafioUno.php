@@ -27,7 +27,7 @@ class DesafioUno {
             
             $cobrar['status']             = true; //linea actualizada, se cambió valor a true
             $cobrar['message']            = 'Tienes Lotes para cobrar';
-            $cobrar['data']['total']     += $lote->precio;
+            $cobrar['data']['total']     += $lote->precio; //bug corregido: atributo de json era incorrecto
             $cobrar['data']['detail'][]   = (array) $lote;
  
         }
