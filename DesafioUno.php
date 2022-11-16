@@ -20,17 +20,14 @@ class DesafioUno {
 
         foreach($lotes as $lote){
 
-        
-            if($lote->vencimiento || $lote->vencimiento > date('Y-m-d')) continue;
+            if(!$lote->vencimiento || $lote->vencimiento <= date('Y-m-d')) continue; //bug corregido, condición vencimiento 
 
 
-            if($lote->client_ID !== $clientID) continue;
+            if($lote->clientID !== $clientID) continue; //bug corregido: atributo de json mal escrito
             
-
-            
-            $cobrar['status']             = false;
+            $cobrar['status']             = true; //linea actualizada, se cambió valor a true
             $cobrar['message']            = 'Tienes Lotes para cobrar';
-            $cobrar['data']['total']     += $lote->monto;
+            $cobrar['data']['total']     += $lote->precio;
             $cobrar['data']['detail'][]   = (array) $lote;
  
         }
