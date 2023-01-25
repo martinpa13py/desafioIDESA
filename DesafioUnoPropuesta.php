@@ -57,6 +57,7 @@ class DesafioUno {
             $rows['clientID'] = (string) $rows['clientID'];
             $lotes[] = (object) $rows;
         }
+        $cnx->close();
         return $lotes;
     }
 }
