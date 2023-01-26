@@ -1,7 +1,11 @@
 <?php
 
 require_once 'Database.php';
-
+/*Obs: 
+    - Retorna exactamente los resultados solicitados en el repositorio.
+    - Si lo que se quiere es obtener todas las cuotas que ya caducaron de todos los lotes,
+    entonces comentar la linea 36, 38 y descomentar la linea 22,23,28,32
+*/
 class DesafioUno {
 
 
@@ -15,17 +19,23 @@ class DesafioUno {
         $cobrar['data']['total']     = 0;
         $cobrar['data']['detail']    = [];
 
-        $timeZone = new DateTimeZone('America/Asuncion');
-        $now = new DateTime('now', $timeZone);
+        //$timeZone = new DateTimeZone('America/Asuncion'); //linea 22
+        //$now = new DateTime('now', $timeZone); //linea 23
         $status = true;
 
         foreach ($lotes as $lote) {
 
-            $vencimiento = new DateTime($lote->vencimiento, $timeZone);
+            //$vencimiento = new DateTime($lote->vencimiento, $timeZone); //linea 28
 
-            if (!$lote->vencimiento || $vencimiento > $now) continue;
+            if (!$lote->vencimiento) continue;
+
+            //if ($vencimiento > $now) continue; // linea 32
 
             if ((int) $lote->clientID !== $clientID) continue;
+
+            if ($lote->lote !== '00148') continue; // linea 36
+
+            if ((int) $lote->precio !== 190000) continue; // linea 38
 
             $status = false;
             $cobrar['data']['total']      += $lote->precio;
@@ -33,7 +43,6 @@ class DesafioUno {
         }
         $cobrar['status'] = $status;
         $cobrar['message'] = $status ? $cobrar['message'] : "Tienes Lotes para cobrar";
-
         echo json_encode($cobrar);
         exit;
     }

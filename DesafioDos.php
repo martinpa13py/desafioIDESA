@@ -19,6 +19,7 @@ class DesafioDos {
         while ($rows = $result->fetchArray(SQLITE3_ASSOC)) {
             $lotes[] = (object) $rows;
         }
+        $cnx->close();
         return $lotes;
     }
 }
