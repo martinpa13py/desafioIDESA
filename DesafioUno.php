@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Database.php';
-/*Obs: 
+/* Obs: 
     - Retorna exactamente los resultados solicitados en el repositorio.
     - Si lo que se quiere es obtener todas las cuotas que ya caducaron de todos los lotes,
     entonces comentar la linea 36, 38 y descomentar la linea 22,23,28,32

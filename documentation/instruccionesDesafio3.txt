@@ -1,0 +1,5 @@
+ - Acceder a la carpeta `/rest` desde la terminal y ejecutar `php -S localhost:8000` para lanzar servidor de prueba.
+ y luego consumir el servicio en la dirección `http://localhost:8000/DesafioTresConsultaLote.php?id_lote=00148`.
+ - Se adjunta postman para prueba.
+ - Puede cambiar el parametro lote como desee.
+ - Me tomé la libertad de modificar un poco la estructura de los datos de salida, agrupandolos por categorias.

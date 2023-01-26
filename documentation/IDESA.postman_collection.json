@@ -11,14 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/DesafioTresConsulta.php?id_lote=00148",
+					"raw": "http://localhost:8000/DesafioTresConsultaLote.php?id_lote=00148",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
-						"DesafioTresConsulta.php"
+						"DesafioTresConsultaLote.php"
 					],
 					"query": [
 						{
