@@ -1,5 +1,5 @@
 <?php
-require_once '../DesafioTres.php';
+require_once 'base/DesafioTres.php';
 
 $loteID = trim(stripslashes(htmlspecialchars($_GET['id_lote']))); // clean param
 $response = array("status" => "success", "message" => "");
