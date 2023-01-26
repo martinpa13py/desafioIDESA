@@ -1,0 +1,4 @@
+ - Acceder a esta carpeta `rest` desde la terminal y ejecutar `php -S localhost:8000` 
+ y luego consumirlo desde `http://localhost:8000/DesafioTresConsulta.php?id_lote=00148`.
+ - Se adjunta postman para prueba.
+ - Me tomé la libertad de modificar un poco la estructura de los datos de salida, agrupandolos por categorias.
