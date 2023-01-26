@@ -14,7 +14,7 @@ if (!is_numeric($loteID)) {
 }
 
 try {
-    $loteInfo = DesafioTres::getLoteDebtsList($loteID);
+    $loteInfo = DesafioTres::getListOfLoteDebtsClassified($loteID);
     $response['data'] = $loteInfo;
 } catch (\Throwable $th) {
     $response['status'] = "failed";

@@ -1,9 +1,8 @@
 <?php
 require_once '../Database.php';
-
 class DesafioTres {
 
-    public static function getLoteInfo(string $loteID): array {
+    public static function getListOfLoteDebtsClassified(string $loteID): array {
         $data = array(
             "overDueDebts" => array(
                 "lotes" => array(),
@@ -57,9 +56,15 @@ class DesafioTres {
         return $data;
     }
 
+    public static function getLoteDebtsList(string $loteID): array {
+        Database::setDB();
+        $lotes = self::getAllDebtsForLote($loteID);
+        return $lotes;
+    }
+
     private static function getAllDebtsForLote(string $loteID): array {
         $lotes = [];
-        $sql = "SELECT * FROM debts WHERE lote = :loteID";
+        $sql = "SELECT * FROM debts WHERE lote = :loteID ORDER BY vencimiento ASC";
         $cnx = Database::getConnection();
         $stmt = $cnx->prepare($sql);
         $stmt->bindValue(':loteID', $loteID);

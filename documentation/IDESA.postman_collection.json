@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "87a583be-ea5c-44d6-ab9f-c7e77d077542",
+		"_postman_id": "9fe337a3-6c90-4362-88a8-41ea60111aff",
 		"name": "IDESA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -19,6 +19,31 @@
 					"port": "8000",
 					"path": [
 						"DesafioTresConsultaLote.php"
+					],
+					"query": [
+						{
+							"key": "id_lote",
+							"value": "00148"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener datos lote v2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/DesafioTresConsultaLotePropuesta.php?id_lote=00148",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"DesafioTresConsultaLotePropuesta.php"
 					],
 					"query": [
 						{
