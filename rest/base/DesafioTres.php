@@ -4,7 +4,6 @@ require_once '../Database.php';
 class DesafioTres {
 
     public static function getLoteInfo(string $loteID): array {
-        // estructura de respuesta para mantener formato de otros desafios
         $data = array(
             "overDueDebts" => array(
                 "lotes" => array(),

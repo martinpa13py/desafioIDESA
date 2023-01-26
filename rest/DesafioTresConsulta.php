@@ -3,6 +3,7 @@ require_once 'base/DesafioTres.php';
 
 $loteID = trim(stripslashes(htmlspecialchars($_GET['id_lote']))); // clean param
 $response = array("status" => "success", "message" => "");
+
 if (!is_numeric($loteID)) {
     header("HTTP/1.1 400 Bad Request");
     header('Content-Type: application/json');
